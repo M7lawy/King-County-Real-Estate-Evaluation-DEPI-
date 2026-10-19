@@ -1,40 +1,55 @@
+
 # 🏡 King County Real Estate Valuation & Analytics Dashboard
 
-An end-to-end Machine Learning and interactive dashboard project built with **Plotly Dash**, **Bootstrap**, and **XGBoost** to predict house prices and analyze geospatial housing trends across King County, Washington (including Seattle, Bellevue, Redmond, Kirkland, and surrounding areas).
+An end-to-end Machine Learning and interactive dashboard project built with **Plotly Dash**, **Bootstrap**, and **XGBoost** to predict house prices and analyze geospatial housing trends across King County, Washington (including Seattle, Bellevue, Redmond, Kirkland, and surrounding areas). Developed as a capstone project for the **Digital Egypt Pioneers Initiative (DEPI)**.
+
+---
+
+## 👥 Project Team
+
+* **Mohamed Elmhlawy**
+* **Zeyad Elshiekh**
+* **Mohned Hamed**
+* **Omar Marzouk**
+* **Mahmoud Samir**
+* **Menna Sokar**
 
 ---
 
 ## 📁 Project Structure
 
+
 ```
-├── app.py                     # Main Dash web application (clean, simple entrypoint)
-├── data_loader.py             # Data loading, prediction engine & Plotly chart builders
-├── requirements.txt           # Python dependencies
-├── .gitignore                 # Standard Python & Jupyter ignore rules
-├── README.md                  # Project documentation
+
+├── app.py                      # Main Dash web application (clean, simple entrypoint)
+├── data_loader.py              # Data loading, prediction engine & Plotly chart builders
+├── requirements.txt            # Python dependencies
+├── .gitignore                  # Standard Python & Jupyter ignore rules
+├── README.md                   # Project documentation
 │
-├── assets/                    # Dashboard styles
-│   └── custom.css             # Custom CSS styling (Inter font, cards, badges)
+├── assets/                     # Dashboard styles
+│   └── custom.css              # Custom CSS styling (Inter font, cards, badges)
 │
-├── layouts/                   # Modular layout components
-│   ├── __init__.py            # Layout package exports
-│   ├── header.py              # Navigation banner & KPI summary metrics
-│   ├── prediction_tab.py      # Tab 1: Feature inputs & interactive map
-│   ├── visualizations_tab.py  # Tab 2: EDA charts from Visualization.ipynb
-│   ├── ml_tab.py              # Tab 3: Model comparison & "Why XGBoost"
-│   ├── dataset_tab.py         # Tab 4: Sample data table & data dictionary
-│   └── footer.py              # Footer component
+├── layouts/                    # Modular layout components
+│   ├── **init**.py             # Layout package exports
+│   ├── header.py               # Navigation banner & KPI summary metrics
+│   ├── prediction_tab.py       # Tab 1: Feature inputs & interactive map
+│   ├── visualizations_tab.py   # Tab 2: EDA charts from Visualization.ipynb
+│   ├── ml_tab.py               # Tab 3: Model comparison & "Why XGBoost"
+│   ├── dataset_tab.py          # Tab 4: Sample data table & data dictionary
+│   └── footer.py               # Footer component
 │
-├── Notebooks/                 # Research & exploration notebooks
-│   ├── Cleaning.ipynb         # Data cleaning, null handling & feature engineering
-│   ├── MachineLearning.ipynb  # Model training & benchmarking (XGBoost, RF, Ridge, OLS)
-│   └── Visualization.ipynb    # In-depth exploratory data analysis visualizations
+├── Notebooks/                  # Research & exploration notebooks
+│   ├── Cleaning.ipynb          # Data cleaning, null handling & feature engineering
+│   ├── MachineLearning.ipynb   # Model training & benchmarking (XGBoost, RF, Ridge, OLS)
+│   └── Visualization.ipynb     # In-depth exploratory data analysis visualizations
 │
-└── Data/                      # Datasets & serialized models
-    ├── CleanedData.csv        # Final processed dataset (21,612 records)
-    ├── kc_house_data_NaN.csv  # Raw King County housing data
-    ├── best_house_price_model.pkl # Trained champion XGBoost model
-    └── model_features.pkl     # Feature columns list for model inference
+└── Data/                       # Datasets & serialized models
+├── CleanedData.csv         # Final processed dataset (21,612 records)
+├── kc_house_data_NaN.csv   # Raw King County housing data
+├── best_house_price_model.pkl # Trained champion XGBoost model
+└── model_features.pkl      # Feature columns list for model inference
+
 ```
 
 ---
@@ -55,7 +70,7 @@ An end-to-end Machine Learning and interactive dashboard project built with **Pl
 - **One-Click Test Presets:**
   - 🏡 *Seattle Standard Home* (3 bed, 2 bath, 1,800 sq ft, Grade 7, Zip 98103)
   - 💎 *Bellevue Luxury Mansion* (5 bed, 4.5 bath, 4,800 sq ft, Grade 11, Zip 98004)
-  - 🌊 *Mercer Island Waterfront Estate* (4 bed, 4 bath, 4,200 sq ft, Grade 12, Waterfront, Zip 98040)
+  - 🌊 *Mercer Island Waterfront Estate* (4 bed, 4 bath, 4,200 sq ft, Grade 12, Waterfront, Zip 98004)
   - 🌲 *Suburban Family Home* (3 bed, 1.75 bath, 1,500 sq ft, Grade 7, Zip 98001)
 
 ---
@@ -106,30 +121,51 @@ Replicates all 9 interactive visualizations from `Notebooks/Visualization.ipynb`
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/king-county-real-estate-valuation.git
+   git clone [https://github.com/your-username/king-county-real-estate-valuation.git](https://github.com/your-username/king-county-real-estate-valuation.git)
    cd king-county-real-estate-valuation
-   ```
+
+```
 
 2. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
+```bash
+pip install -r requirements.txt
+
+```
+
 
 3. **Run the dashboard:**
-   ```bash
-   python app.py
-   ```
+```bash
+python app.py
+
+```
+
 
 4. **Open in your browser:**
-   ```
-   http://127.0.0.1:8050/
-   ```
+```
+[http://127.0.0.1:8050/](http://127.0.0.1:8050/)
+
+```
+
+
 
 ---
 
 ## 📓 Running the Notebooks
 
 The Jupyter Notebooks are located in the `Notebooks/` directory and are configured to read data directly from `../Data/`:
-- `Notebooks/Cleaning.ipynb`: Data cleaning, imputing, and feature engineering.
-- `Notebooks/Visualization.ipynb`: Exploratory data analysis charts.
-- `Notebooks/MachineLearning.ipynb`: Model training, evaluation, and serialization.
+
+* `Notebooks/Cleaning.ipynb`: Data cleaning, imputing, and feature engineering.
+* `Notebooks/Visualization.ipynb`: Exploratory data analysis charts.
+* `Notebooks/MachineLearning.ipynb`: Model training, evaluation, and serialization.
+
+---
+
+## 🎓 Acknowledgments
+
+This project was developed under the **Digital Egypt Pioneers Initiative (DEPI)** - Data Science Track. Special thanks to our instructors and mentors for their guidance throughout the program.
+
+```
+
+<FollowUp label="Would you like a footer component or 'About the Team' modal script for your Plotly Dash web app?" query="Show me how to add a clean 'About the Team & DEPI Project' section or modal inside the Plotly Dash app interface."/>
+
+```
