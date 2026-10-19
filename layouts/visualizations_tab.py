@@ -104,6 +104,16 @@ def get_visualizations_tab():
                     html.P("Interactive 3D scatter plot (rotatable with mouse). Points are colored by Price Per Square Foot (Plasma colorscale), showing how high construction grade and square footage interact simultaneously to elevate property values.", className="text-muted small"),
                     dcc.Graph(figure=dl.get_fig_3d_surface())
                 ]
+            ),
+
+            # VIZ 9: HOUSE PRICES BY ZIPCODE
+            html.Div(
+                className="dashboard-card",
+                children=[
+                    html.H5("9. House Prices by Postal Zipcode: Top 15 Expensive vs Top 15 Affordable", className="card-title-custom"),
+                    html.P("Comparing the median property price across postal zipcodes highlights an extreme geographical disparity (ranging from $235,000 in South King County up to $1,892,500 in Medina 98039 and $1,150,000 in Downtown Bellevue 98004).", className="text-muted small"),
+                    dcc.Graph(figure=dl.get_fig_zipcode_prices())
+                ]
             )
         ]
     )

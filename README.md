@@ -61,7 +61,7 @@ An end-to-end Machine Learning and interactive dashboard project built with **Pl
 ---
 
 ### 2. 📊 Exploratory Visualizations Section
-Replicates all 8 interactive visualizations from `Notebooks/Visualization.ipynb`:
+Replicates all 9 interactive visualizations from `Notebooks/Visualization.ipynb`:
 1. **Real Geographic Housing Map:** 5,000 sampled transactions on OpenStreetMap with living area bubble sizing and price colormaps.
 2. **Price Skewness & Log-Transformation:** Raw price skewness (+4.02) normalized to +0.43 via `np.log1p`.
 3. **Living Area vs Price & Log Price:** Dual scatter with OLS regression fit lines showing variance stabilization.
@@ -70,6 +70,7 @@ Replicates all 8 interactive visualizations from `Notebooks/Visualization.ipynb`
 6. **Construction Grade & Waterfront Impact:** Log-scale boxplot demonstrating the substantial premium of waterfront locations across all construction grades.
 7. **Geospatial Density & Mean Price:** Spatial sales volume density versus geographic average price clusters around Lake Washington.
 8. **3D Surface & Scatter Explorer:** Interactive 3D visualization of Living Area vs Grade vs Log Price colored by Price per Sq Ft.
+9. **House Prices by Postal Zipcode:** Top 15 most expensive zipcodes (Medina $1.89M, Bellevue $1.15M) vs top 15 most affordable zipcodes ($235k - $278k).
 
 ---
 

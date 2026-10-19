@@ -684,6 +684,70 @@ def get_fig_3d_surface():
     )
     return fig
 
+def get_fig_zipcode_prices():
+    """Visualization 9: Top 15 Most Expensive vs Top 15 Most Affordable Zipcodes"""
+    zip_summary = df.groupby('zipcode').agg(
+        median_price=('price', 'median'),
+        mean_price=('price', 'mean'),
+        count=('price', 'count')
+    ).reset_index()
+
+    top15 = zip_summary.sort_values(by='median_price', ascending=True).tail(15)
+    bottom15 = zip_summary.sort_values(by='median_price', ascending=False).tail(15)
+
+    fig = make_subplots(
+        rows=1, cols=2,
+        subplot_titles=[
+            "Top 15 Most Expensive Zipcodes (Median Price)",
+            "Top 15 Most Affordable Zipcodes (Median Price)"
+        ]
+    )
+
+    fig.add_trace(
+        go.Bar(
+            y=top15['zipcode'].astype(str),
+            x=top15['median_price'],
+            orientation='h',
+            marker=dict(color=top15['median_price'], colorscale='Magma'),
+            text=[f"${v:,.0f}" for v in top15['median_price']],
+            textposition='outside',
+            cliponaxis=False,
+            name='Expensive Zipcodes',
+            hovertemplate='<b>Zipcode %{y}</b><br>Median Price: %{x:$,.0f}<extra></extra>'
+        ),
+        row=1, col=1
+    )
+
+    fig.add_trace(
+        go.Bar(
+            y=bottom15['zipcode'].astype(str),
+            x=bottom15['median_price'],
+            orientation='h',
+            marker=dict(color=bottom15['median_price'], colorscale='Tealgrn'),
+            text=[f"${v:,.0f}" for v in bottom15['median_price']],
+            textposition='outside',
+            cliponaxis=False,
+            name='Affordable Zipcodes',
+            hovertemplate='<b>Zipcode %{y}</b><br>Median Price: %{x:$,.0f}<extra></extra>'
+        ),
+        row=1, col=2
+    )
+
+    fig.update_xaxes(title_text="Median Price ($)", tickformat="$,.0f", row=1, col=1)
+    fig.update_xaxes(title_text="Median Price ($)", tickformat="$,.0f", row=1, col=2)
+    fig.update_yaxes(title_text="Postal Zipcode", row=1, col=1)
+    fig.update_yaxes(title_text="Postal Zipcode", row=1, col=2)
+
+    fig.update_layout(
+        template='plotly_white',
+        title="<b>Geographic Price Disparity: Top 15 Most Expensive vs Most Affordable King County Zipcodes</b>",
+        showlegend=False,
+        height=540,
+        margin=dict(t=60, b=40, l=60, r=40)
+    )
+    return fig
+
+
 # -------------------------------------------------------------
 # 6. MACHINE LEARNING SECTION CHARTS (from MachineLearning.ipynb)
 # -------------------------------------------------------------
