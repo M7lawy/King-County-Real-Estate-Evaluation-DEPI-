@@ -164,8 +164,4 @@ The Jupyter Notebooks are located in the `Notebooks/` directory and are configur
 
 This project was developed under the **Digital Egypt Pioneers Initiative (DEPI)** - Data Science Track. Special thanks to our instructors and mentors for their guidance throughout the program.
 
-```
 
-<FollowUp label="Would you like a footer component or 'About the Team' modal script for your Plotly Dash web app?" query="Show me how to add a clean 'About the Team & DEPI Project' section or modal inside the Plotly Dash app interface."/>
-
-```
